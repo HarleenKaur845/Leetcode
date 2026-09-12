@@ -1,0 +1,11 @@
+from collections import Counter
+class Solution(object):
+    def frequencySort(self, nums):
+        c=Counter(nums)
+        s=sorted(c.items(),key=lambda x:(x[1],-x[0]))
+        result=[]
+        for i in range(0,len(s)):
+            result.extend([s[i][0]]*s[i][1])
+        return result
+        
+        
