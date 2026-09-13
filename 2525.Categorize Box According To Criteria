@@ -1,0 +1,13 @@
+class Solution(object):
+    def categorizeBox(self, length, width, height, mass):
+        Bulky=(length>=10000 or width>=10000 or height>=10000 or (length*width*height)>=10**9) 
+        Heavy=(mass>=100)
+        if Bulky and Heavy:
+            return "Both"
+        elif Bulky:
+            return "Bulky"
+        elif Heavy:
+            return "Heavy"
+        else:
+            return "Neither"
+        
