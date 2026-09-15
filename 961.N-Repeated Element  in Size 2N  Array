@@ -1,0 +1,8 @@
+from collections import Counter
+class Solution(object):
+    def repeatedNTimes(self, nums):
+        c=Counter(nums)
+        for k,v in c.items():
+            if v==len(nums)//2:
+                return k
+        
