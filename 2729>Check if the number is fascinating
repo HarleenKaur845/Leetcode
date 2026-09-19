@@ -1,0 +1,19 @@
+from collections import Counter
+class Solution(object):
+    def isFascinating(self, n):
+        nums="123456789"
+        s=str(n)
+        s+=str(2*n)
+        s+=str(3*n)
+        c=Counter(s)
+        for k,v in c.items():
+            if k not in nums or v!=1:
+                return False
+        return True
+
+
+
+        
+
+        
+        
