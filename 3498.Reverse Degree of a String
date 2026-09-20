@@ -1,0 +1,9 @@
+class Solution(object):
+    def reverseDegree(self, s):
+        total=0
+        reverse="zyxwvutsrqponmlkjihgfedcba"
+        for i in range(len(s)):
+            total+=(ord('z')-ord(s[i])+1)*(i+1)
+        return total
+
+        
