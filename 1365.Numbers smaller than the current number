@@ -1,0 +1,11 @@
+from collections import Counter
+class Solution(object):
+    def smallerNumbersThanCurrent(self, nums):
+        c=Counter(nums)
+        count=0
+        small={}
+        for num in sorted(c):
+            small[num]=count
+            count+=c[num]
+        return [small[x] for x in nums]
+
