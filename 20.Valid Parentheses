@@ -1,0 +1,19 @@
+class Solution(object):
+    def isValid(self, s):
+        stack=[]
+        for ch in s:
+            if ch=="(" or ch=="[" or ch=="{":
+                stack.append(ch)
+            else:
+                if not stack:    #check if any closing bracket came but stack is empty that means no opening partner found so return false
+                    return False
+                last=stack.pop()
+                if ch==")" and last !="(":
+                    return False
+                
+                if ch=="]" and last !="[":
+                    return False
+                
+                if ch=="}" and last !="{":
+                    return False
+        return len(stack)==0   #can't return True directly because if there are only opening brackets in s so the else part will not be executed and program will return true even if matching pairs are not found eg-"{{"
