@@ -1,0 +1,8 @@
+class Solution(object):
+    def digitFrequencyScore(self, n):
+        total=0
+        while n>0:
+            k=n%10 #gives the last digit
+            n=n//10 #removes the last digit
+            total+=k
+        return total
