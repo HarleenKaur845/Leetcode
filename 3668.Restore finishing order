@@ -1,0 +1,9 @@
+class Solution(object):
+    def recoverOrder(self, order, friends):
+        result=[]
+        x=set(friends)
+        for i in order:
+            if i in x:
+                result.append(i)
+        return result
+        
