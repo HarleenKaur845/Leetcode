@@ -1,0 +1,34 @@
+class Solution(object):
+    def sortArray(self, nums):
+        def merge_sort(nums,low,high):
+            if low < high:
+                mid=(low+high)//2
+                merge_sort(nums,low,mid)
+                merge_sort(nums,mid+1,high)
+                merge(nums,low,mid,high)
+        def merge(nums,low,mid,high):
+            B=[]
+            i=low
+            j=mid+1
+            while i<=mid and j<=high:
+                if nums[i]<=nums[j]:
+                    B.append(nums[i])
+                    i+=1
+                else:
+                    B.append(nums[j])
+                    j+=1
+            while(i<=mid):
+                B.append(nums[i])
+                i+=1
+            while(j<=high):
+                B.append(nums[j])
+                j+=1
+
+            nums[low:high+1]=B
+        
+        merge_sort(nums,0,len(nums)-1)
+        return nums
+
+        
+    
+    
