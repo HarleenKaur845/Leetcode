@@ -1,0 +1,12 @@
+class Solution(object):
+    def isPalindrome(self, x):
+        # Handling Negative Numbers
+        if x<0:
+            return False
+        copy=x
+        reverse=0  # we will store reversed number in here
+        while copy>0:
+            last=copy % 10  #gives last number of x
+            reverse= reverse * 10 + last   #shifts digit to left
+            copy=copy//10#removes last digit for next iteration
+        return x==reverse
