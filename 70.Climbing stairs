@@ -1,0 +1,28 @@
+n represents steps required to reach the top
+we can either take 1 step or 2 step at a time
+if n=1 ,we can take 1 step only and if n=2 we have two ways that is 1+1 or direct 2 so we write if n<=2: return n
+now we observe pattern if we have n=3 then then how we can climb stairs? 
+we either clim one step at a time that is 1+1+1 or 2+1 or 1+2 that means 3 ways 
+if n=4 then we can have ways(n-1)+ways(n-2) that means ways(3) that was 3 and ways of 2 that was 2 that is 5 ways for n=4
+SO,GENERAL FORMULA IS WAYS(N)=WAYS(N-1) + WAYS(N-2)
+and we start from a=1 and b=2 and for loop strats from 3 as we already knew the ways to climb for n=1 and n=2
+The pattern matches FIBONACCI SERIES   1 2 3 5 8 13 but it satarts from 1 not 0
+so the code is,
+a=1
+b=2
+for i in range(3,n+1):
+    a,b=b,a+b
+return b
+
+here a stores way of previous step and b stores ways of current step
+
+FULL CODE 
+if n<=2:
+            return n
+        a=1
+        b=2
+        for i in range(3,n+1):
+            a,b=b,a+b
+        return b
+        
+        
