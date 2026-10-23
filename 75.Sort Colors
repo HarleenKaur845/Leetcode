@@ -1,0 +1,27 @@
+class Solution(object):
+    def sortColors(self, nums):
+        r=0
+        w=0
+        b=0
+        for i in nums:
+            if i==0:
+                r+=1
+            elif i==1:
+                w+=1
+            else:
+                b+=1
+
+        j=0
+        while r:
+            nums[j]=0
+            j+=1
+            r-=1
+        while w:
+            nums[j]=1
+            j+=1
+            w-=1
+        while b:
+            nums[j]=2
+            j+=1
+            b-=1
+        return nums
