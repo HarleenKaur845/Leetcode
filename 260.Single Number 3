@@ -1,0 +1,13 @@
+from collections import Counter
+class Solution(object):
+    def singleNumber(self, nums):
+        c=Counter(nums)
+        result=[]
+        count=0
+        for k,v in c.items():
+            if count !=2 and v==1:
+                result.append(k)
+                count+=1
+        return result
+        
+        Not optimal though in terms of space complexity
