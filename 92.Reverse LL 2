@@ -1,0 +1,34 @@
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution(object):
+    def reverseBetween(self, head, left, right):
+        temp=head
+        pos=1
+        before=None
+        while pos!=left:
+            before=temp
+            temp=temp.next
+            pos+=1
+        temp2=temp
+       #Reversing 
+        pos=left
+        prev=None
+        curr=temp
+        while pos <=right:
+            new=curr.next
+            curr.next=prev
+            prev=curr
+            curr=new
+            pos+=1
+        temp2.next=curr
+        if before is not None:
+            before.next=prev
+        else:
+            head=prev
+        return head
+
+
+        
