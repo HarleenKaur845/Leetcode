@@ -1,0 +1,14 @@
+class Solution(object):
+    def areNumbersAscending(self, s):
+        result=[]
+        for i in s.split():
+            if i.isdigit():
+                result.append(int(i))
+        for j in range(0,len(result)-1):
+            if int(result[j+1])<=int(result[j]):
+                return False
+        return True
+
+
+        
+        
