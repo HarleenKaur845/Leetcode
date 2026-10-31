@@ -1,0 +1,6 @@
+class Solution(object):
+    def findDegrees(self, matrix):
+        result=[]
+        for i in matrix:
+            result.append(i.count(1))
+        return result
