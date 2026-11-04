@@ -1,0 +1,7 @@
+sum of first n odd numbers=n*n
+sum of first n even numbers=n(n+1)
+so gcd(n**2,n(n+1)-:
+common is n 
+so   n gcd(n,n+1)->gcd of consecutive numbers is always one so it becomes n(1) so ans is n so solution is that we simply return n
+
+return n
