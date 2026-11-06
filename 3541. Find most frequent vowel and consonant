@@ -1,0 +1,15 @@
+from collections import Counter
+class Solution(object):
+    def maxFreqSum(self, s):
+        c=Counter(s)
+        vowels="aeiou"
+        maxv=0
+        maxc=0
+        for k,v in c.items():
+            if k in vowels:
+                if v>maxv:
+                    maxv=v
+            else:
+                if v>maxc:
+                    maxc=v
+        return maxv + maxc
