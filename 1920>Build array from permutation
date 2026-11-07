@@ -1,0 +1,17 @@
+class Solution(object):
+    def buildArray(self, nums):
+        for i in range(len(nums)):
+            nums[i]=nums[i] + (nums[nums[i]] % len(nums)) * len(nums)
+        for i in range(len(nums)):
+            nums[i]=nums[i]//len(nums)
+        return nums
+
+        # //helps to retain new value whereas % helps to get original value
+        # basically we are doing encoding
+
+            
+            * n karne se new value ek alag numerical range mein chali jaati hai, jisse dono values distinguish ho sakti hain.
+            Ek important distinction:
+- Encoding ke baad original value temporarily accessible through % n hai.
+- Decoding ke baad final new value // n se milti hai.
+Isi wajah se hum pehle poora encoding loop chalate hain aur phir decoding loop.
