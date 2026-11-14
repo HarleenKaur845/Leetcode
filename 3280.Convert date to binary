@@ -1,0 +1,13 @@
+class Solution(object):
+    def convertDateToBinary(self, date):
+
+        ans=date.split("-")
+        result=[]
+        for i in ans:
+            result.append(bin(int(i))[2:])
+            result.append("-")
+        result.pop()
+        return "".join(result)
+
+
+        
