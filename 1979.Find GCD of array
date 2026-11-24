@@ -1,0 +1,10 @@
+class Solution(object):
+    def findGCD(self, nums):
+        def gcd(a,b):
+            while b !=0:
+                a,b=b,a%b
+            return a
+        a=max(nums)
+        b=min(nums)
+        return gcd(a,b)
+        
